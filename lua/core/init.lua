@@ -89,8 +89,9 @@ autocmd("BufWritePost", {
 
     -- statusline
     if config.ui.statusline.theme ~= "custom" then
-      require("plenary.reload").reload_module("nvchad.statusline." .. config.ui.statusline.theme)
-      vim.opt.statusline = "%!v:lua.require('nvchad.statusline." .. config.ui.statusline.theme .. "').run()"
+      require("plenary.reload").reload_module "nvchad.stl.utils"
+      require("plenary.reload").reload_module("nvchad.stl." .. config.ui.statusline.theme)
+      vim.opt.statusline = "%!v:lua.require('nvchad.stl." .. config.ui.statusline.theme .. "')()"
     end
 
     -- tabufline
