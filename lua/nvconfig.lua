@@ -32,15 +32,15 @@ M.ui = {
     separator_style = "default",
 
     order = nil,
-    modules = nil,
+    modules = {},
   },
 
   -- lazyload it when there are 1+ buffers
   tabufline = {
-    show_numbers = false,
     enabled = true,
     lazyload = true,
-    overriden_modules = nil,
+    order = { "treeOffset", "buffers", "tabs", "btns" },
+    modules = {},
   },
 
   -- nvdash (dashboard)
