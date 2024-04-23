@@ -5,7 +5,7 @@ local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", fa
 if custom_init_path then
   dofile(custom_init_path)
 end
-
+vim.wo.relativenumber = true
 require("core.utils").load_mappings()
 
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
