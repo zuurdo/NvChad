@@ -3,8 +3,8 @@ local null_ls = require("null-ls")
 
 local opts = {
   sources = {
-    null_ls.builtins.formatting.clang_format,
     null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.clang_format,
     null_ls.builtins.diagnostics.mypy,
     null_ls.builtins.diagnostics.ruff,
   },
@@ -14,7 +14,7 @@ local opts = {
         group = augroup,
         buffer = bufnr,
       })
-      vim.api.nvim_clear_autocmds("BufWritePre", {
+      vim.api.nvim_create_autocmd("BufWritePre", {
         group = augroup,
         buffer = bufnr,
         callback = function ()
@@ -22,7 +22,6 @@ local opts = {
         end,
       })
     end
-    
   end
 }
 
