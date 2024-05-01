@@ -12,6 +12,15 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
 }
 
+on_attach = function( bufnr)
+  local opts = {buffer = bufnr, remap = false}
+
+  vim.keymap.set("n", "gd", function () vim.lsp.buf.definition() end, opts)
+    
+  end
+
+
+
 lspconfig.pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,

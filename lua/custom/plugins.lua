@@ -11,6 +11,7 @@ local plugins = {
     config = function ()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
+
     end
   },
   {
@@ -23,9 +24,14 @@ local plugins = {
         "ruff",
         "black",
         "pyright",
+        "ripgrep",
       }
     }
   }
 
 }
+local builtin = require ('telescope.builtin')
+vim.keymap.set('n', '<leader>ps', function()
+       builtin.grep_string({search = vim.fn.input("Grep > ")});
+end)
 return plugins

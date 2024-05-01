@@ -3,6 +3,12 @@
 local default_plugins = {
 
   "nvim-lua/plenary.nvim",
+  
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.x',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+
 
   {
     "NvChad/base46",
@@ -66,7 +72,6 @@ local default_plugins = {
       require("indent_blankline").setup(opts)
     end,
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile" },
