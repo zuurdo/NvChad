@@ -25,6 +25,7 @@ local plugins = {
         "black",
         "pyright",
         "ripgrep",
+        "isort"
       }
     }
   }
