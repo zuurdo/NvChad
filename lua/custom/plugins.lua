@@ -18,13 +18,14 @@ local plugins = {
     "williamboman/mason.nvim",
     opts={
       ensure_installed = {
+        "lua-language-server",
+        "diagnostic-languageserver",
         "clangd",
         "clang-format",
         "mypy",
         "ruff",
         "black",
         "pyright",
-        "ripgrep",
         "isort"
       }
     }

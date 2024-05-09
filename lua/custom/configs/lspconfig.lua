@@ -18,7 +18,20 @@ on_attach = function( bufnr)
   vim.keymap.set("n", "gd", function () vim.lsp.buf.definition() end, opts)
     
   end
-
+require("lspconfig").diagnosticls.setup {
+  filetypes = {"python"},
+  init_options = {
+    formatters = {
+      black = {
+        command = "isort",
+        args = {"--profle", "black", "--filter-files"},
+      },
+      formatFiletypes = {
+        python = {"black"}
+      }
+    }
+  }
+}
 
 
 lspconfig.pyright.setup({
